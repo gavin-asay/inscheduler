@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title layout:title-pattern="$CONTENT_TITLE - $LAYOUT_TITLE">Inscheduler</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Inscheduler</h1>
+        <nav>
+            <ul th:if="${isClientGuest}">
+                <li>Invite sent to [[${email}]] by [[${hostname}]]</li>
+                <li>Create account</li>
+                <li>Not your email address?</li>
+            </ul>
+            <ul th:unless="${isClientGuest}">
+                <li>Welcome [[${fullname}]]</li>
+                <li>My signups</li>
+                <li>My Events</li>
+                <li>Log out</li>
+            </ul>
+        </nav>
+    </header>
+
+    <main></main>
+</body>
